@@ -6,7 +6,7 @@
 <p>Vous avez été recruté en tant que développeur front-end par Orinoco, une entreprise de commerce en ligne. </p>
 <p>Dans un premier temps, Paul souhaite créer un premier MVP pour démontrer le fonctionnement de ses applications à ses investisseurs.</p>
 
-<h4>objectif</h4>
+<h4>Objectif</h4>
 <p>L’application web sera composée de 4 pages :<br>
 Une page de vue sous forme de liste, montrant tous les articles disponibles
 à la vente ;<br>
