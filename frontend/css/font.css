@@ -1,6 +1,6 @@
 li{list-style: none; line-height: 1.8;}
 li , p , h3 {font-family: 'Courier New', Courier, monospace;}
-header, footer,{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+header, footer{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
 footer{color: white;font-size: 22px;}
 
 #banniere h2{font-size: 40px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;line-height: 2;}

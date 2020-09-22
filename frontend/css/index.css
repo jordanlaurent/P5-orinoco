@@ -40,11 +40,6 @@ body{
     color: black;
   }
   
-  /* Style the active/current link*/
-  .header a.active {
-    background-color: rgb(30, 144, 255)
-    color: white;
-  }
   
   /* Float the link section to the right */
   .header-right {
