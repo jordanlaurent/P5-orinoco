@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panier</title>
 </head>
 <body>
@@ -14,6 +18,54 @@
               <a href="chekout.html">PANIER</a>
             </div>
     </header>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+      <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                <tr>
+                  <th style="width:50%">Produit</th>
+                  <th style="width:10%">Prix</th>
+                  <th style="width:8%">Quantité</th>
+                  <th style="width:22%" class="text-center">Prix TTC</th>
+                  <th style="width:10%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-th="Product">
+                    <div class="row">
+                      <div class="col-sm-2 hidden-xs"><img src="../../backend/images/vcam_3.jpg" alt="..." class="img-responsive" style="width: 150%;"/></div>
+                      <div class="col-sm-10">
+                        <h4 class="nomargin">Camera</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td data-th="Price">49900 FCFA</td>
+                  <td data-th="Quantity">
+                    <input type="number" class="form-control text-center" value="1">
+                  </td>
+                  <td data-th="Subtotal" class="text-center">49900</td>
+                  <td class="actions" data-th="">
+                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr class="visible-xs">
+                  <td class="text-center"><strong>Total 49900 FCFA</strong></td>
+                </tr>
+                <tr>
+                  <td><a href="../../index.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continué le Shopping</a></td>
+                  <td colspan="2" class="hidden-xs"></td>
+                  <td class="hidden-xs text-center"><strong>Total 49900 FCFA</strong></td>
+                  <td><a href="Formulaire_paiement.html" class="btn btn-success btn-block">Acheter<i class="fa fa-angle-right"></i></a></td>
+                </tr>
+              </tfoot>
+            </table>
+    </div>
+
     <footer>
       Orinoco tout droits réservé - 2020
   </footer>
