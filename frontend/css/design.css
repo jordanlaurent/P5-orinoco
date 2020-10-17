@@ -1,0 +1,15 @@
+body{background-color: #000000;}
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom:0;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #333333;
+    text-align: center;
+  }
+nav{background-color: #333333;}
+
+#textesousbanniere{text-align: center;background-color: #333333;color: aliceblue;padding-top: 50px;padding-bottom: 50px;}
