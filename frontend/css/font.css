@@ -1,7 +1,9 @@
 li{list-style: none; line-height: 1.8;}
-li , p , h3 {font-family: 'Courier New', Courier, monospace;color: white;}
-header, footer{font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;color: white;}
-footer{color: white;font-size: 22px;color: white;}
+li , p , h3 {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif monospace;color: white;}
+header, footer{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif monospace;color: white;}
+footer{color: white;color: white;}
 
-#banniere h2{font-size: 40px;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;line-height: 2;color: white;}
+#banniere h2{font-size: 40px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif monospace;line-height: 2;color: white;}
 #textesousbanniere h2{color: red;}
+
+nav {font-size: 22px;letter-spacing: 6px;}
