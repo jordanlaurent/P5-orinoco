@@ -16,6 +16,7 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
 .textcenter{text-align: center;}
 .video{display: none;}
 .videoMOBILE{ display: flex; flex-direction: column;align-items: center;}
+.bg{background-color: rgb(20, 20, 20);}
 @media screen and (min-width: 1024px) {
     footer ul{ display: flex;flex-direction: row;justify-content: space-evenly;}
     #article {display: flex;flex-direction: row; justify-content: center;align-items: center;padding-top: 20px;}
