@@ -23,6 +23,6 @@ cameraprice.onreadystatechange = function() {
       }
     };
     cameraprice.open("GET", "http://localhost:3000/api/cameras");
-    cameraprice.send();
+    cameraprice.send("POST", "http://localhost:3000/api/cameras/_id");
     
   

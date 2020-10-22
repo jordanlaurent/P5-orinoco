@@ -17,5 +17,5 @@
 
             }
           };
-          productunique.open("GET", "http://localhost:3000/api/cameras/:_id/");
+          productunique.open("GET", "http://localhost:3000/api/cameras/_id");
           productunique.send();
