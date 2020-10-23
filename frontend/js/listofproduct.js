@@ -13,7 +13,7 @@ cameraprice.onreadystatechange = function() {
               <td><img src=${produit.imageUrl} class="img-fluid img-thumbnail w-80"></td>
               <td class="w-25 align-middle">${produit.name}</td>
               <td class="w-25 align-middle">${produit.price} FCFA</td>
-              <td class="w-25 align-middle"><a button href="camera.html?=camera${produit._id}"class="btn btn-info btn-lg">Afficher</button></td></a>
+              <td class="w-25 align-middle"><a button href="camera.html?cameraId=${produit._id}"class="btn btn-info btn-lg">Afficher</button></td></a>
             </tr>
             `   
         ) 
@@ -23,6 +23,6 @@ cameraprice.onreadystatechange = function() {
       }
     };
     cameraprice.open("GET", "http://localhost:3000/api/cameras");
-    cameraprice.send("POST", "http://localhost:3000/api/cameras/_id");
+    cameraprice.send();
     
   
