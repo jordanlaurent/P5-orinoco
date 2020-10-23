@@ -17,6 +17,8 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
 .video{display: none;}
 .videoMOBILE{ display: flex; flex-direction: column;align-items: center;padding-bottom: 40px;}
 .bg{background-color: rgb(39, 38, 38);}
+.bg2{background-color: rgb(255, 255, 255);display: flex; flex-direction: column;}
+.txtblack{color: black; line-height: 2em; font-size: large;}
 .logopaiment{display: flex; flex-direction: row; justify-content: center; background-color: rgb(207, 203, 203);}
 @media screen and (min-width: 1024px) {
     footer ul{ display: flex;flex-direction: row;justify-content: space-evenly;}
@@ -27,11 +29,18 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
     .textvideo{margin-bottom: -10px;padding-top: 20px;}
     .textcenter{text-align: center;margin-top: -30px;}
     .temoignage{margin-left: 15%; margin-right: 15%; width: 80%;}
-    .logopaiment{display: flex; flex-direction: row; justify-content: center; background-color: rgb(207, 203, 203); width: 100%;}
-    .nameproduct{font-size: xx-large; text-align: center; padding-top: 30px; padding-bottom: 30px;  line-height: 4em; width: 50%;}
+    .logopaiment{display: flex; flex-direction: row; justify-content: center; background-color: rgb(255, 255, 255); align-items: center;}
+    .nameproduct{font-size: xx-large; text-align: center; padding-top: 50px; padding-bottom: 130px;  line-height: 4em; width: 50%;}
     .info{font-size:large;padding-left: 10%;   line-height: 2em;}
+    .textemballagecadeaux{padding-left: 5%;}
+    #emballagecadeaux{display: flex;flex-direction: row; align-items: center;padding-top: 50px; padding-bottom: 50px;}
+    .badgeproductpage{padding-left: 15%;padding-right: 15%;}
 }
 @media screen and (max-width: 1024px) {
     .nameproduct{font-size: xx-large; padding-top: 40px;padding-bottom: 50px;width: 100%; text-align: center; display: flex; flex-direction: column;align-content: center;}
-    .info{display: flex; flex-direction: column;text-align: center ;padding-bottom: 20px;}
+    .info{display: flex; flex-direction: column;text-align: center ;padding-bottom: 50px;}
+    .imgcadeaux{width: 100%; padding: 0px;}
+    .badgeproductpage{width: 100%;}
+    .logopaiment{display: flex; width: 100%;}
+    #emballagecadeaux{padding: 0px;}
 }
