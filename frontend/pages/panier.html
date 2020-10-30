@@ -24,70 +24,172 @@
        </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav tracking-in-expand-fwd-top">
         <li class="nav-item active">
-          <a class="nav-link navfont" href="../../index.html">ACCUEIL <span class="sr-only">(current)</span></a>
+          <a class="nav-link navfont " href="../../index.html">ACCUEIL <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navfont " href="produit.html">PRODUITS</a>
+          <a class="nav-link" href="produit.html">PRODUITS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link navfont" href="panier.html">PANIER</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled navfont" href="#">NOUS CONTACTER</a>
+          <a class="nav-link navfont" href="informationlegal.html">INFORMATIONS LEGAL</a>
         </li>
       </ul>
     </div>
   </nav>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="container">
-      <table id="cart" class="table table-hover table-condensed">
-                <thead>
-                <tr>
-                  <th style="width:50%">Produit</th>
-                  <th style="width:10%">Prix</th>
-                  <th style="width:8%">Quantité</th>
-                  <th style="width:22%" class="text-center">Prix TTC</th>
-                  <th style="width:10%"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-th="Product">
-                    <div class="row">
-                      <div class="col-sm-2 hidden-xs"><img src=${response.imageUrl} alt="..." class="img-responsive" style="width: 150%;"/></div>
-                      <div class="col-sm-10">
-                        <h4 class="nomargin" ${response.name}></h4>
-                        <p ${response.description}></p>
-                      </div>
-                    </div>
-                  </td>
-                  <td data-th="Price" ${response.price}></td>
-                  <td data-th="Quantity">
-                    <input type="number" class="form-control text-center" value="1">
-                  </td>
-                  <td data-th="Subtotal" class="text-center">49900</td>
-                  <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
-                  </td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr class="visible-xs">
-                  <td class="text-center"><strong>Total 49900 FCFA</strong></td>
-                </tr>
-                <tr>
-                  <td><a href="../../frontend/pages/produit.html" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continué le Shopping</a></td>
-                  <td colspan="2" class="hidden-xs"></td>
-                  <td class="hidden-xs text-center"><strong>Total 49900 FCFA</strong></td>
-                  <td><a href="Formulaire_paiement.html" class="btn btn-success btn-block">Acheter<i class="fa fa-angle-right"></i></a></td>
-                </tr>
-              </tfoot>
-            </table>
-    </div>
 
+  <article class="panier">
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Votre panier</span>
+        <span class="badge badge-secondary badge-pill"> fake "3"</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0" id="nameproduct"></h6>
+            <p id="imgproduct"></p>
+            <small id="infoproduct" class="text-muted"></small>
+          </div>
+          <p class="text-muted" id="Panier"></p>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span class="text-muted" id="panier"></span>
+          <span class="text-dark">Total (CFA)</span>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Adresse de facturation</h4>
+      <form class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Prénom</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              Un prénom valide est requis.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Nom de famille</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+            <div class="invalid-feedback">
+              Un nom de famille valide est requis.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email <span class="text-muted">(Optionel)</span></label>
+          <input type="email" class="form-control" id="email" placeholder="jean.louis@example.fr">
+          <div class="invalid-feedback">
+            Veuillez saisir une adresse e-mail valide pour recevoir les mises à jour d'expédition.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Adresse</label>
+          <input type="text" class="form-control" id="address" placeholder="2 rue saint martin" required="">
+          <div class="invalid-feedback">
+            indiquer votre adresse  de livraisond
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Adresse 2 <span class="text-muted">(Optionel)</span></label>
+          <input type="text" class="form-control" id="address2" placeholder="Appartement ou bloc">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Region</label>
+            <select class="custom-select d-block w-100" id="country" required="">
+              <option value="">Choisir...</option>
+              <option>Auvergne-Rhône-Alpes</option>
+               <option>Bourgogne-Franche-Comté</option>
+                <option>Bretagne</option>
+                <option>Centre-Val de Loire</option> 
+                <option>Corse</option>
+                 <option>Grand Est</option> 
+                <option>Hauts-de-France</option>
+                <option>Île-de-France</option>
+                <option>Normandie</option>
+                <option>Nouvelle-Aquitaine</option> 
+                <option> Occitanie </option>
+               <option> Pays de la Loire</option>
+               <option> Provence-Alpes-Côte d'Azur</option>
+            </select>
+            <div class="invalid-feedback">
+              Veuillez sélectionner une région valide.
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="zip">Code postal</label>
+            <input type="text" class="form-control" id="zip" placeholder="45000" required="">
+            <div class="invalid-feedback">
+              Entrer un code postal valide
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="same-address">
+          <label class="custom-control-label" for="same-address">L'adresse de livraison est la même que mon adresse de facturation</label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="save-info">
+          <label class="custom-control-label" for="save-info">Enregistrez ces informations pour la prochaine fois</label>
+        </div>
+        <hr class="mb-4">
+
+        <h4 class="mb-3">Paiement</h4>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="cc-name">Nom affiché sur la carte</label>
+            <input type="text" class="form-control" id="cc-name" placeholder=" Delamon louis" required="">
+            <small class="text-muted">Le nom complet affiché sur la carte</small>
+            <div class="invalid-feedback">
+              Le nom de la carte est requis
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="cc-number">Numéro de carte de crédit</label>
+            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+            <div class="invalid-feedback">
+              Le numéro de carte de crédit est requis
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label for="cc-expiration">Expiration</label>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="09/21" required="">
+            <div class="invalid-feedback">
+              Date d'expiration requise
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="cc-cvv">CVV</label>
+            <input type="text" class="form-control" id="cc-cvv" placeholder="123" required="">
+            <div class="invalid-feedback">
+              Code de sécurité requis
+            </div>
+          </div>
+        </div>
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmer le paiement</button>
+      </form>
+    </div>
+  </div>
+</article>
+    <table id="panier" class="bg text-white"></table>
+
+    
     <footer>
       <ul>
          <li>
@@ -108,5 +210,6 @@
         </li>
       </ul>
     </footer>
+    <script src="../js/panier.js"></script>
 </body>
 </html>

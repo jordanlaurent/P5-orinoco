@@ -20,6 +20,7 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
 .bg2{background-color: rgb(255, 255, 255);display: flex; flex-direction: column;}
 .txtblack{color: black; line-height: 2em; font-size: large;}
 .logopaiment{display: flex; flex-direction: row; justify-content: center; background-color: rgb(207, 203, 203);}
+.mentionlegal{padding: 10%; color: white;}
 @media screen and (min-width: 1024px) {
     footer ul{ display: flex;flex-direction: row;justify-content: space-evenly;}
     #article {display: flex;flex-direction: row; justify-content: center;align-items: center;padding-top: 20px;}
@@ -35,6 +36,7 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
     .textemballagecadeaux{padding-left: 5%;}
     #emballagecadeaux{display: flex;flex-direction: row; align-items: center;padding-top: 50px; padding-bottom: 50px;}
     .badgeproductpage{padding-left: 15%;padding-right: 15%;}
+    .panier{padding: 10%;}
 }
 @media screen and (max-width: 1024px) {
     .nameproduct{font-size: xx-large; padding-top: 40px;padding-bottom: 50px;width: 100%; text-align: center; display: flex; flex-direction: column;align-content: center;}
@@ -44,3 +46,4 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
     .logopaiment{display: flex; width: 100%;}
     #emballagecadeaux{padding: 0px;}
 }
+
