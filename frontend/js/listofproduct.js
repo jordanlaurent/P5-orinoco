@@ -8,13 +8,13 @@ cameraprice.onreadystatechange = function() {
         let listOfProducts = '';
       
         response.forEach(produit=>
-          listOfProducts += `
-            <tr class="text-center">
+          listOfProducts += `</br>
+            <tr id="listedesproduit" class="text-center">
               <td><img src=${produit.imageUrl} class="img-fluid img-thumbnail w-80"></td>
               <td class="w-25 align-middle">${produit.name}</td>
               <td class="w-25 align-middle">${produit.price} FCFA</td>
               <td class="w-25 align-middle"><a button href="camera.html?cameraId=${produit._id}"class="btn btn-info btn-lg">Afficher</button></td></a>
-            </tr>
+           </br> </tr>
             `   
         ) 
 
