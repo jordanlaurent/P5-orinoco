@@ -35,7 +35,7 @@ nav li {padding-left: 20px; display: flex;justify-content: center;}
     .info{font-size:large;padding-left: 10%; padding-right: 7%;  line-height: 2em;}
     .textemballagecadeaux{padding-left: 5%;}
     #emballagecadeaux{display: flex;flex-direction: row; align-items: center;padding-top: 50px; padding-bottom: 50px;}
-    .panier{padding: 10%;}
+    .panier{padding: 5%;}
 }
 @media screen and (max-width: 1024px) {
     .nameproduct{font-size: xx-large; padding: 5%; width: 100%; text-align: center; display: flex; flex-direction: column;align-content: center;}

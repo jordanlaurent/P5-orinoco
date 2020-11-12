@@ -5,16 +5,13 @@ const getId = new URLSearchParams(window.location.search).get("cameraId");
         var response = JSON.parse(this.responseText);
        
         console.log(response);
-
-        //Je boucle sur lentille pour faire ,les lien d'option <option class="null" value="">${response.lenses} </option>
-        //dans listofproduct ajouter les nouvelle variables faite
       
       listOfProducts = `
                <td class="nameproduct">${response.name} <img class="img-fluid img-thumbnail" src=${response.imageUrl}></td>
                <td class="info">${response.description} </br>  
                              
                <select id="lentille" class="form-control">
-               <option class="null" value="${lenses}" ></option>
+               
                
                </select>
                 </br><h2> ${response.price} CFA</h2> </br>
@@ -28,27 +25,35 @@ const getId = new URLSearchParams(window.location.search).get("cameraId");
 
           document.getElementById("addcartjs").addEventListener("click", myFunction);
 
-          var lenses = [response.lenses[0],response.lenses[1]]
+
+          let lenses = response.lenses;
+          let options = ""
           for (i=0; i<lenses.length; i++){
-            console.log('Lentilles de ' + lenses[i])
-            document.getElementById("lentille").innerHTML = lenses
-          } // fontionne pas 
+            options += `<option class="null" value="${lenses[i]}" >${lenses[i]}</option>`
+          } 
+          document.getElementById("lentille").innerHTML = options
 
           function myFunction() {
-            let Camera = [{
+            let Camera = {
               Nomproduit : response.name ,
               Image : response.imageUrl,
               description : response.description,
-              Prix : response.price,  
-            }]
-            let panier = JSON.stringify(Camera);
-            var existing = localStorage.getItem("Panier",panier);
-            existing = existing ? existing.split(',') : [];
-            existing.push(panier);
-            localStorage.setItem('Panier', existing.toString());
+              Prix : response.price, 
+              lenses : response.lenses,
+            }
+
+            var existing = localStorage.getItem("Panier");
+            console.log(existing);
+            existing = existing ? JSON.parse(existing) : [];
+            console.log(existing);
+            existing.push(Camera);
+            console.log(JSON.stringify(existing));
+            localStorage.setItem('Panier', JSON.stringify(existing));
           }
 
             }
+
+            
           };
           
          productunique.open("GET", `http://localhost:3000/api/cameras/${getId}`);

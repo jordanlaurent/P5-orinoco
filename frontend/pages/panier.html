@@ -40,153 +40,114 @@
       </ul>
     </div>
   </nav>
-
   <article class="panier">
-  <div class="row">
-    <div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-white">Votre panier</span>
-      </h4>
-      <ul class="list-group mb-3">
-        <div>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-            <small id="ProduitPanier" class="text-dark"></small>
-        </li>
-        </div>
-        <li class="list-group-item d-flex justify-content-between">
-          <span class="text-dark">Total CFA</span>
-        </li>
-        <button onclick="deleteItem()">Vider le panier</button>
-      </ul>
-    </div>
-
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-white">Votre panier</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <div>
+          <li class="list-group-item d-flex justify-content-between lh-condensed rounded-0">
+              <small id="ProduitPanier" class="text-dark "></small>
+          </li>
+          </div>
+          <li class="list-group-item rounded-0">
+            <span id="PrixTotal" class="text-dark font-weight-bold">Total Panier : </span>
+          </li>
+          <button onclick="window.location.reload(); deleteItem()" type="button" class=" btn-secondary rounded-bottom">Vider le panier</button>
+        </ul>
+      </div>
 
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Adresse de facturation</h4>
-      <form class="needs-validation" novalidate="">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="firstName">Prénom</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
-            <div class="invalid-feedback">
-              Un prénom valide est requis.
+        <h4 class="mb-3">Adresse de facturation</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Prénom</label>
+              <input type="text" class="form-control" id="firstName"  placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Un prénom valide est requis.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Nom de famille</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Un nom de famille valide est requis.
+              </div>
             </div>
           </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastName">Nom de famille</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
-            <div class="invalid-feedback">
-              Un nom de famille valide est requis.
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="email">Email <span class="text-muted">(Optionel)</span></label>
-          <input type="email" class="form-control" id="email" placeholder="jean.louis@example.fr">
-          <div class="invalid-feedback">
-            Veuillez saisir une adresse e-mail valide pour recevoir les mises à jour d'expédition.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address">Adresse</label>
-          <input type="text" class="form-control" id="address" placeholder="2 rue saint martin" required="">
-          <div class="invalid-feedback">
-            indiquer votre adresse  de livraisond
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address2">Adresse 2 <span class="text-muted">(Optionel)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Appartement ou bloc">
-        </div>
-
-        <div class="row">
-          <div class="col-md-5 mb-3">
-            <label for="country">Region</label>
-            <select class="custom-select d-block w-100" id="country" required="">
-              <option value="">Choisir...</option>
-              <option>Auvergne-Rhône-Alpes</option>
-               <option>Bourgogne-Franche-Comté</option>
-                <option>Bretagne</option>
-                <option>Centre-Val de Loire</option> 
-                <option>Corse</option>
-                 <option>Grand Est</option> 
-                <option>Hauts-de-France</option>
-                <option>Île-de-France</option>
-                <option>Normandie</option>
-                <option>Nouvelle-Aquitaine</option> 
-                <option> Occitanie </option>
-               <option> Pays de la Loire</option>
-               <option> Provence-Alpes-Côte d'Azur</option>
-            </select>
-            <div class="invalid-feedback">
-              Veuillez sélectionner une région valide.
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="zip">Code postal</label>
-            <input type="text" class="form-control" id="zip" placeholder="45000" required="">
-            <div class="invalid-feedback">
-              Entrer un code postal valide
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
-          <label class="custom-control-label" for="same-address">L'adresse de livraison est la même que mon adresse de facturation</label>
-        </div>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="save-info">
-          <label class="custom-control-label" for="save-info">Enregistrez ces informations pour la prochaine fois</label>
-        </div>
-        <hr class="mb-4">
-
-        <h4 class="mb-3">Paiement</h4>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="cc-name">Nom affiché sur la carte</label>
-            <input type="text" class="form-control" id="cc-name" placeholder=" Delamon louis" required="">
-            <small class="text-muted">Le nom complet affiché sur la carte</small>
-            <div class="invalid-feedback">
-              Le nom de la carte est requis
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="cc-number">Numéro de carte de crédit</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-            <div class="invalid-feedback">
-              Le numéro de carte de crédit est requis
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="09/21" required="">
-            <div class="invalid-feedback">
-              Date d'expiration requise
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="123" required="">
-            <div class="invalid-feedback">
-              Code de sécurité requis
-            </div>
-          </div>
-        </div>
-        <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmer le paiement</button>
-      </form>
-    </div>
-  </div>
-</article>
-    <table id="panier" class="bg text-white"></table>
-
     
+          <div class="mb-3">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="jean.louis@example.fr">
+            <div class="invalid-feedback">
+              Veuillez saisir une adresse e-mail valide pour recevoir les mises à jour d'expédition.
+            </div>
+          </div>
+    
+          <div class="mb-3">
+            <label for="address">Adresse</label>
+            <input type="text" class="form-control" id="address" placeholder="2 rue saint martin" required="">
+            <div class="invalid-feedback">
+              indiquer votre adresse  de livraison
+            </div>
+          </div>
+    
+          <div class="mb-3">
+            <label for="address2">Adresse 2 <span class="text-muted">(Optionel)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Appartement ou bloc">
+          </div>
+    
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="country">Region</label>
+              <select class="custom-select d-block w-100" id="country" required="">
+                <option value="">Choisir...</option>
+                <option>Auvergne-Rhône-Alpes</option>
+                 <option>Bourgogne-Franche-Comté</option>
+                  <option>Bretagne</option>
+                  <option>Centre-Val de Loire</option> 
+                  <option>Corse</option>
+                   <option>Grand Est</option> 
+                  <option>Hauts-de-France</option>
+                  <option>Île-de-France</option>
+                  <option>Normandie</option>
+                  <option>Nouvelle-Aquitaine</option> 
+                  <option> Occitanie </option>
+                 <option> Pays de la Loire</option>
+                 <option> Provence-Alpes-Côte d'Azur</option>
+              </select>
+              <div class="invalid-feedback">
+                Veuillez sélectionner une région valide.
+              </div>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="zip">Code postal</label>
+              <input type="text" class="form-control" id="zip" placeholder="45000" required="">
+              <div class="invalid-feedback">
+                Entrer un code postal valide
+              </div>
+            </div>
+          </div>
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">L'adresse de livraison est la même que mon adresse de facturation</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info">Enregistrez ces informations pour la prochaine fois</label>
+          </div>
+    
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmer le paiement</button>
+        </form>
+      </div>
+    </div>
+    </article>
+
     <footer>
       <ul>
          <li>
