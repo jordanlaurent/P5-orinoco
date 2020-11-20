@@ -67,6 +67,8 @@ form.addEventListener('submit', function(e) {
                 return data.json()
             }).then((json) => {
                 localStorage.setItem("order", json.orderId)
+                localStorage.setItem("nom", json.contact.lastName)
+                localStorage.setItem("prenom", json.contact.firstName)
                     //localStorage.setItem("Product", json.products)
                 window.location.href = "confirmationdecommande.html";
             })
