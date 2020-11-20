@@ -2,19 +2,18 @@
 function deleteItem() {
     alert('Votre panier est vide');
     localStorage.removeItem("Panier");
+    localStorage.removeItem("ProductId");
 }
 
-    // récuperer les informations stocker dans le Local storage
-    function recuperationinfo() {
-        return localStorage.getItem("Panier");  
-    }
-
+// récuperer les informations stocker dans le Local storage
+function recuperationinfo() {
+    return localStorage.getItem("Panier");
+}
 // calculer le prix total du panier
 let totalPrice = 0;
-JSON.parse(localStorage.getItem("Panier")).forEach((produit)=>
+JSON.parse(localStorage.getItem("Panier")).forEach((produit) =>
     totalPrice += produit.Prix
 )
-console.log(totalPrice);
 document.getElementById('PrixTotal').innerHTML += totalPrice + " CFA";
 
 // re transformer le contenue du local storage en object dans la console 
@@ -24,9 +23,9 @@ $getLocalStorage = JSON.parse($getLocalStorage);
 
 // afficher les objet dans la console dans le code html
 let Panierview = '';
-      
-$getLocalStorage.forEach(produit=>
-   Panierview += `
+
+$getLocalStorage.forEach(produit =>
+    Panierview += `
     <table id="Listproductpanier" class="table table-sm ">
   <tbody>
     <tr>
@@ -38,9 +37,7 @@ $getLocalStorage.forEach(produit=>
     </tr>
   </tbody>
 </table>
- `   
-    ) 
+ `
+)
 
-document.getElementById('ProduitPanier').innerHTML =  Panierview
-
-
+document.getElementById('ProduitPanier').innerHTML = Panierview
