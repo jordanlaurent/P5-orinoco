@@ -40,27 +40,49 @@ form.addEventListener('submit', function(e) {
             email: form.email.value,
         };
         let products = JSON.parse(localStorage.getItem("ProductId"));
-        console.log(products);
+
+
+
         let objData = {
-            contact,
-            products,
+            contact: contact,
+            products: [],
         };
+
+        products.forEach((produit) => {
+            objData.products.push(produit.id)
+        })
+
+        console.log(objData)
 
         let objetRequest = JSON.stringify(objData);
         console.log(objetRequest);
-        var request = new XMLHttpRequest();
-        request.open("POST", "http://localhost:3000/api/cameras/order");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.onreadystatechange = function() {
-            if (this.readyState == XMLHttpRequest.DONE) {
-                console.log(this.responseText);
-                // Récupération de la réponse du serveur
-                localStorage.setItem("order", this.responseText);
-                // Redirection vers la page de confirmation
-                // window.location.href = "confirmationdecommande.html";
-            }
-        };
-        request.send(objetRequest);
+        fetch('http://localhost:3000/api/cameras/order', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: objetRequest
+            })
+            .then((data) => {
+                return data.json()
+            }).then((json) => {
+                localStorage.setItem("order", json.orderId)
+                    //localStorage.setItem("Product", json.products)
+                window.location.href = "confirmationdecommande.html";
+            })
+            /* var request = new XMLHttpRequest();
+            request.open("POST", "http://localhost:3000/api/cameras/order",true);
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function(responseText) {
+                if (this.readyState == XMLHttpRequest.DONE) {
+                    console.log(this.responseText);
+                    // Récupération de la réponse du serveur
+                    localStorage.setItem("order", this.responseText);
+                    // Redirection vers la page de confirmation
+                     window.location.href = "confirmationdecommande.html";
+                }
+            };
+            request.send(objetRequest); */
     } else {
         console.log("Message  : ERREUR");
     }

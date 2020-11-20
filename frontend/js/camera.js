@@ -46,7 +46,7 @@ productunique.onreadystatechange = function() {
                 lenses: document.getElementById('lentille').value,
             }
             let productId = {
-                ProductId: response._id,
+                id: response._id,
             }
             var existingid = localStorage.getItem("ProductId");
             existingid = existingid ? JSON.parse(existingid) : [];
