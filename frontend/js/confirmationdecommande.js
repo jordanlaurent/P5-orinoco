@@ -19,4 +19,6 @@ function deleteStorageReturnHome() {
     localStorage.removeItem("Panier");
     localStorage.removeItem("ProductId");
     localStorage.removeItem("order");
+    localStorage.removeItem("nom");
+    localStorage.removeItem("prenom");
 }
