@@ -1,10 +1,9 @@
+// requete xmlrequest pour recuperer l'api camera
 const getId = new URLSearchParams(window.location.search).get("cameraId");
 var productunique = new XMLHttpRequest();
 productunique.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         var response = JSON.parse(this.responseText);
-
-        console.log(response);
 
         listOfProducts = `
                <td class="nameproduct">${response.name} <img class="img-fluid img-thumbnail" src=${response.imageUrl}></td>
@@ -31,11 +30,8 @@ productunique.onreadystatechange = function() {
         }
         document.getElementById("lentille").innerHTML = options
 
-        //Quand je cl
+        //ajout aux panier
         document.getElementById("addcartjs").addEventListener("click", addToCart);
-
-
-
 
         function addToCart() {
             let Camera = {

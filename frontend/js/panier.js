@@ -16,12 +16,12 @@ JSON.parse(localStorage.getItem("Panier")).forEach((produit) =>
 )
 document.getElementById('PrixTotal').innerHTML += totalPrice + " CFA";
 
-// re transformer le contenue du local storage en object dans la console 
+// re transformer le contenue du local storage en object 
 $getLocalStorage = recuperationinfo();
 
 $getLocalStorage = JSON.parse($getLocalStorage);
 
-// afficher les objet dans la console dans le code html
+// afficher les objet  dans le code html
 let Panierview = '';
 
 $getLocalStorage.forEach(produit =>
