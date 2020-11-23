@@ -2,27 +2,27 @@ let form = document.querySelector('#myForm')
 
 //ecouter la modification de l'email
 form.email.addEventListener('change', function() {
-    validemail(this)
+    validemail(this);
 });
 
 //ecouter la modification du prenom
 form.firstName.addEventListener('change', function() {
-    validfirstName(this)
+    validfirstName(this);
 });
 
 //ecouter la modification du nom
 form.lastName.addEventListener('change', function() {
-    validlastName(this)
+    validlastName(this);
 });
 
 //ecouter la modification de l'adresse
 form.address.addEventListener('change', function() {
-    validaddress(this)
+    validaddress(this);
 });
 
 //ecouter la modification de la ville
 form.city.addEventListener('change', function() {
-    validcity(this)
+    validcity(this);
 });
 
 //ecouter la validation du formulaire
@@ -49,7 +49,7 @@ form.addEventListener('submit', function(e) {
         };
 
         products.forEach((produit) => {
-            objData.products.push(produit.id)
+            objData.products.push(produit.id);
         })
 
         let objetRequest = JSON.stringify(objData);
@@ -64,9 +64,9 @@ form.addEventListener('submit', function(e) {
             .then((data) => {
                 return data.json()
             }).then((json) => {
-                localStorage.setItem("order", json.orderId)
-                localStorage.setItem("nom", json.contact.lastName)
-                localStorage.setItem("prenom", json.contact.firstName)
+                localStorage.setItem("order", json.orderId);
+                localStorage.setItem("nom", json.contact.lastName);
+                localStorage.setItem("prenom", json.contact.firstName);
                 window.location.href = "confirmationdecommande.html";
             })
 
@@ -77,7 +77,7 @@ form.addEventListener('submit', function(e) {
 });
 
 //validation email
-const validemail = function(inputEmail) {
+const validemail = (inputEmail) => {
     //creation de la regex (expression réguliere) pour le champs email 
     let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$', 'g');
 
@@ -101,7 +101,7 @@ const validemail = function(inputEmail) {
 };
 
 //validation prenom 
-const validfirstName = function(inputfirstName) {
+const validfirstName = (inputfirstName) => {
     let FirstNameRegExp = new RegExp('^[a-zA-Z]{3,10}$', 'g');
     let small = inputfirstName.nextElementSibling;
     if (FirstNameRegExp.test(inputfirstName.value)) {
@@ -120,7 +120,7 @@ const validfirstName = function(inputfirstName) {
 };
 
 //validation nom  
-const validlastName = function(inputlastName) {
+const validlastName = inputlastName => {
     let lastNameRegExp = new RegExp('^[a-zA-Z]{3,10}$', 'g');
     let small = inputlastName.nextElementSibling;
     if (lastNameRegExp.test(inputlastName.value)) {
@@ -139,7 +139,7 @@ const validlastName = function(inputlastName) {
 };
 
 //validation ADRESSE
-const validaddress = function(inputaddress) {
+const validaddress = inputaddress => {
     let addressRegExp = new RegExp('^[a-zA-Z0-9.]', 'g');
     let small = inputaddress.nextElementSibling;
     if (addressRegExp.test(inputaddress.value)) {
@@ -158,7 +158,7 @@ const validaddress = function(inputaddress) {
 };
 
 //validation city
-const validcity = function(inputcity) {
+const validcity = inputcity => {
     let cityRegExp = new RegExp('^[a-zA-Z]{3,10}$', 'g');
     let small = inputcity.nextElementSibling;
     if (cityRegExp.test(inputcity.value)) {

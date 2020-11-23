@@ -6,9 +6,12 @@ function deleteItem() {
 }
 
 // récuperer les informations stocker dans le Local storage
-function recuperationinfo() {
-    return localStorage.getItem("Panier");
-}
+// function recuperationinfo() {
+//     return localStorage.getItem("Panier");
+// }
+
+const recuperationinfo = () => localStorage.getItem("Panier");
+
 // calculer le prix total du panier
 let totalPrice = 0;
 JSON.parse(localStorage.getItem("Panier")).forEach((produit) =>
@@ -40,4 +43,4 @@ $getLocalStorage.forEach(produit =>
  `
 )
 
-document.getElementById('ProduitPanier').innerHTML = Panierview
+document.getElementById('ProduitPanier').innerHTML = Panierview;

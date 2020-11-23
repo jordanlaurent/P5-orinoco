@@ -12,13 +12,12 @@ OrderConfirmationCommande = `
 
    `
 
-document.getElementById('orderConfirmation').innerHTML = OrderConfirmationCommande
+document.getElementById('orderConfirmation').innerHTML = OrderConfirmationCommande;
 
 //vider le local storage aux clic sur le bouton retour acceuil
-function deleteStorageReturnHome() {
-    localStorage.removeItem("Panier");
-    localStorage.removeItem("ProductId");
-    localStorage.removeItem("order");
-    localStorage.removeItem("nom");
-    localStorage.removeItem("prenom");
-}
+const deleteStorageReturnHome = () =>
+    localStorage.removeItem("Panier")
+localStorage.removeItem("ProductId")
+localStorage.removeItem("order")
+localStorage.removeItem("nom")
+localStorage.removeItem("prenom");
