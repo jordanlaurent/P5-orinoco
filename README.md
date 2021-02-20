@@ -1,4 +1,14 @@
-<h2>Projet n°4 OpenClassRooms Orinoco</h2>
+<h2>Projet n°5 OpenClassRooms Orinoco</h2>
+
+<h3>Etape 1 </h3>
+Telecharger le projet et lancer le avec un editeur de code
+<hr>
+<h3>ETAPE 2</h3>
+Ouvrer la console utiliser la commande "npm install"
+<hr>
+<h3>ETAPE 3 </h3>
+Selectionner le dossier backend dans la console et lancer la commande "nodemon serve"
+
 <h3>Techno</h3>
 <p>• HTML5 • SASS • CSS • JAVASCRIPT •</p>
 
